@@ -8,7 +8,8 @@ import {
 } from "react-native";
 
 import Card from '../Organisme/Card';
-import Colors from '../Template/Constants/colors'
+import Colors from '../Template/Constants/colors';
+import Input from '../Atom/Input';
 
 // finish video part 7
 const StartGameScreen = (props) => {
@@ -18,7 +19,13 @@ const StartGameScreen = (props) => {
 
             <Card style={styles.inputContainer}>
                 <Text>Select a Number</Text>
-                <TextInput />
+                <Input style={styles.input} 
+                    blurOnSubmit 
+                    autoCapitaliza='none'  
+                    autoCorrect={false} 
+                    keyboardType="number-pad" 
+                    maxLength={2} 
+                />
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
                         <Button title="Reset" onPress={()=> {}} color={Colors.accent} />
@@ -56,6 +63,10 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 100,
+    },
+    input: {
+        width: 50,
+        textAlign: 'center',
     }
 });
 

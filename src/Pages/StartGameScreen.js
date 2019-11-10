@@ -14,7 +14,8 @@ import Input from '../Atom/Input';
 import NumberContainer from '../Organisme/NumberContainer';
 import Colors from '../Template/Constants/colors';
 
-// finish video part 10
+// finish video part 16 and just git push
+
 const StartGameScreen = (props) => {
 
     const [ enteredValue, setEnteredValue] = useState('');

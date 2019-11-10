@@ -7,18 +7,27 @@ import {
 import Header from "./src/Molekul/Header";
 import StartGameScreen from "./src/Pages/StartGameScreen";
 import GameScreen from './src/Pages/GameScreen';
+import GameOverScreen from './src/Pages/GameOverScreen';
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
-  
+  const [guessRounds, setGuessRounds] = useState(0);
+    
   const startGameHandler = (selectedNumber) => {
     setUserNumber(selectedNumber);
+    setGuessRounds(0);
+  };
+
+  const gameOverHnadler = (numOfRound) => {
+    setGuessRounds(numOfRound);
   };
 
   let content = <StartGameScreen onStartGame={startGameHandler} />;
 
-  if (userNumber) {
-    content = <GameScreen userChoice={userNumber} />;
+  if (userNumber && guessRounds <= 0) {
+    content = <GameScreen userChoice={userNumber} onGameOver={gameOverHnadler} />;
+  } else if (guessRounds > 0) {
+    content = <GameOverScreen />;
   }
     return (
       <View style={styles.screen}>

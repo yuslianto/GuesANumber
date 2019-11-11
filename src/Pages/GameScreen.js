@@ -9,6 +9,7 @@ import {
 
 import NumberContainer from '../Organisme/NumberContainer';
 import Card from '../Organisme/Card';
+import Title from '../Atom/Title';
 
 const generateRandomBetween = (min, max, exlude) => {
     min = Math.ceil(min);
@@ -59,7 +60,7 @@ const GameScreen = (props) => {
 
     return (
         <View style={styles.screen}>
-            <Text>Opponent's Guess</Text>
+            <Title>Opponent's Guess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card style={styles.buttonContainer}>
                 <Button 

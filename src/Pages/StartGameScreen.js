@@ -13,6 +13,7 @@ import Card from '../Organisme/Card';
 import Input from '../Atom/Input';
 import NumberContainer from '../Organisme/NumberContainer';
 import Colors from '../Template/Constants/colors';
+import DefaultStyle from '../Template/Constants/DefaultStyle';
 
 // finish video part 19 and just git push
 
@@ -55,7 +56,7 @@ const StartGameScreen = (props) => {
     if (confirmed) {
         confirmedOutput = (
             <Card style={styles.summaryContainer}>
-                <Text>You Selected</Text>
+                <Text style={DefaultStyle.bodytext}>You Selected</Text>
                 <NumberContainer>
                     {selectedNumber}
                 </NumberContainer>

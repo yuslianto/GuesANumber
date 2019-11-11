@@ -14,7 +14,7 @@ import Input from '../Atom/Input';
 import NumberContainer from '../Organisme/NumberContainer';
 import Colors from '../Template/Constants/colors';
 
-// finish video part 16 and just git push
+// finish video part 19 and just git push
 
 const StartGameScreen = (props) => {
 
@@ -74,7 +74,7 @@ const StartGameScreen = (props) => {
                 <Text style={styles.title}>Start a New Game!</Text>
 
                 <Card style={styles.inputContainer}>
-                    <Text>Select a Number</Text>
+                    <Text style={styles.subTitle}>Select a Number</Text>
                     <Input 
                         style={styles.input} 
                         blurOnSubmit 
@@ -115,6 +115,10 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         marginVertical: 10,
+        fontFamily: 'Roboto-Bold',
+    },
+    subTitle: {
+        fontFamily: 'Roboto-Ligh',
     },
     inputContainer: {
         width: 300,

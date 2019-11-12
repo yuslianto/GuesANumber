@@ -13,7 +13,7 @@ const BodyText = (props) => {
 const styles = StyleSheet.create({
     bodyText: {
         fontFamily: 'bold',
-        fontSize: 15,
+        fontSize: 20,
     }
 });
 

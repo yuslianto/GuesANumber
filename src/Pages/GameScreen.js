@@ -4,7 +4,8 @@ import {
     Text,
     Button,
     Alert,
-    StyleSheet
+    StyleSheet,
+    ScrollView
 } from "react-native";
 
 import NumberContainer from '../Organisme/NumberContainer';
@@ -24,10 +25,9 @@ const generateRandomBetween = (min, max, exlude) => {
 };
 
 const GameScreen = (props) => {
-    const [currentGuess, setCurrentGuess] = useState(
-        generateRandomBetween(1, 100, props.userChoice)
-    );
-    const [rounds, setRounds] = useState(0);
+    const initialGuess = generateRandomBetween(1, 100, props.userChoice);
+    const [currentGuess, setCurrentGuess] = useState(initialGuess);
+    const [pastGuesses, setPastGuesses] = useState([initialGuess]);
     const currentLow = useRef(1);
     const currentHigh = useRef(100);
 
@@ -35,7 +35,7 @@ const GameScreen = (props) => {
 
     useEffect(() => {
         if (currentGuess === userChoice) {
-            onGameOver(rounds);
+            onGameOver(pastGuesses.length);
         }
     }, [currentGuess, userChoice, onGameOver]);
 
@@ -52,11 +52,16 @@ const GameScreen = (props) => {
         if (direction === 'lower') {
             currentHigh.current = currentGuess;
         } else {
-            currentLow.current = currentGuess;
+            currentLow.current = currentGuess + 1;
         }
-        const nextNumber = generateRandomBetween(currentLow.current, currentHigh.current, currentGuess);
+        const nextNumber = generateRandomBetween(
+            currentLow.current, 
+            currentHigh.current, 
+            currentGuess
+        );
         setCurrentGuess(nextNumber);
-        setRounds(curRounds => curRounds + 1);
+        //setRounds(curRounds => curRounds + 1);
+        setPastGuesses(currPassGuesses => [nextNumber, ...currPassGuesses])
     };
 
     return (
@@ -71,6 +76,13 @@ const GameScreen = (props) => {
                     onPress={nextGuessHandler.bind(this, 'greater')} 
                 >GREATER</MainButton>
             </Card>
+            <ScrollView>
+                {pastGuesses.map(guess => (
+                    <View key={guess}>
+                        <Text>{guess}</Text>
+                    </View>
+                ))}
+            </ScrollView>
         </View>
     );
 };

@@ -7,12 +7,14 @@ import {
     Image,
 } from "react-native";
 
-// finish video part 24
+// finish video part 25 just push
 
 
 import BodyText from '../Atom/BodyText';
 import Title from '../Atom/Title';
+import MainButton from '../Atom/MainButton';
 import Colors from '../Template/Constants/colors';
+
 
 const GameOverScreen = (props) => {
     return (
@@ -34,10 +36,7 @@ const GameOverScreen = (props) => {
                     <Text style={styles.highlight}>{props.userNumber}</Text>
                 </BodyText>
             </View>
-            <Button 
-                title="NEW GAME" 
-                onPress={props.onRestart}
-            />
+            <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
         </View>
     );
 };

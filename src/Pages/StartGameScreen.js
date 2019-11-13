@@ -12,6 +12,7 @@ import {
 import Card from '../Organisme/Card';
 import Input from '../Atom/Input';
 import NumberContainer from '../Organisme/NumberContainer';
+import MainButton from '../Atom/MainButton';
 import Colors from '../Template/Constants/colors';
 import DefaultStyle from '../Template/Constants/DefaultStyle';
 
@@ -58,7 +59,9 @@ const StartGameScreen = (props) => {
                 <NumberContainer>
                     {selectedNumber}
                 </NumberContainer>
-                <Button title= "START GAME" onPress={()=> props.onStartGame(selectedNumber)} />
+                <MainButton onPress={()=> props.onStartGame(selectedNumber)}>
+                    START GAME
+                </MainButton>
             </Card>
         )
     }

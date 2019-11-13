@@ -10,6 +10,7 @@ import {
 import NumberContainer from '../Organisme/NumberContainer';
 import Card from '../Organisme/Card';
 import Title from '../Atom/Title';
+import MainButton from '../Atom/MainButton';
 
 const generateRandomBetween = (min, max, exlude) => {
     min = Math.ceil(min);
@@ -63,14 +64,12 @@ const GameScreen = (props) => {
             <Title>Opponent's Guess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card style={styles.buttonContainer}>
-                <Button 
-                    title="LOWER" 
+                <MainButton 
                     onPress={nextGuessHandler.bind(this, 'lower')} 
-                />
-                <Button 
-                    title="GREATER" 
+                >LOWER</MainButton>
+                <MainButton 
                     onPress={nextGuessHandler.bind(this, 'greater')} 
-                />
+                >GREATER</MainButton>
             </Card>
         </View>
     );
@@ -86,8 +85,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: 20,
-        width: 300,
-        maxWidth: '80%'
+        width: 900,
+        maxWidth: '90%'
     }
 });
 

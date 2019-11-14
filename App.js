@@ -5,9 +5,9 @@ import {
 } from "react-native";
 
 import Header from "./src/Molekul/Header";
-import StartGameScreen from "./src/Pages/StartGameScreen";
-import GameScreen from './src/Pages/GameScreen';
-import GameOverScreen from './src/Pages/GameOverScreen';
+import StartGameScreen from "./src/Pages/StartGameScreen/StartGameScreen";
+import GameScreen from './src/Pages/GameScreen/GameScreen';
+import GameOverScreen from './src/Pages/GameOverScreen/GameOverScreen';
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();

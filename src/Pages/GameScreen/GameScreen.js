@@ -8,11 +8,11 @@ import {
     ScrollView
 } from "react-native";
 
-import NumberContainer from '../Organisme/NumberContainer';
-import Card from '../Organisme/Card';
-import Title from '../Atom/Title';
-import BodyText from '../Atom/BodyText';
-import MainButton from '../Atom/MainButton';
+import NumberContainer from '../../Organisme/NumberContainer';
+import Card from '../../Organisme/Card';
+import Title from '../../Atom/Title';
+import BodyText from '../../Atom/BodyText';
+import MainButton from '../../Atom/MainButton';
 
 const generateRandomBetween = (min, max, exlude) => {
     min = Math.ceil(min);

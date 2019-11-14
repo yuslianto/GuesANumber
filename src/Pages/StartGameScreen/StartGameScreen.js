@@ -9,12 +9,12 @@ import {
     StyleSheet
 } from "react-native";
 
-import Card from '../Organisme/Card';
-import Input from '../Atom/Input';
-import NumberContainer from '../Organisme/NumberContainer';
-import MainButton from '../Atom/MainButton';
-import Colors from '../Template/Constants/colors';
-import DefaultStyle from '../Template/Constants/DefaultStyle';
+import Card from '../../Organisme/Card';
+import Input from '../../Atom/Input';
+import NumberContainer from '../../Organisme/NumberContainer';
+import MainButton from '../../Atom/MainButton';
+import Colors from '../../Template/Constants/colors';
+import DefaultStyle from '../../Template/Constants/DefaultStyle';
 
 const StartGameScreen = (props) => {
 

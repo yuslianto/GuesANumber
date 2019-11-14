@@ -7,7 +7,7 @@ import {
     Image,
 } from "react-native";
 
-// finish video part 25 just push
+// finish video part managing past guesses
 
 
 import BodyText from '../Atom/BodyText';

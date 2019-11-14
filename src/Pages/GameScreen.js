@@ -11,6 +11,7 @@ import {
 import NumberContainer from '../Organisme/NumberContainer';
 import Card from '../Organisme/Card';
 import Title from '../Atom/Title';
+import BodyText from '../Atom/BodyText';
 import MainButton from '../Atom/MainButton';
 
 const generateRandomBetween = (min, max, exlude) => {
@@ -23,6 +24,14 @@ const generateRandomBetween = (min, max, exlude) => {
         return rndNum;
     }
 };
+
+    
+const renderListItem = (value, numOfRound) => (
+    <View key={value} style={styles.listItem} >
+        <BodyText>#{numOfRound}</BodyText>
+        <BodyText>{value}</BodyText>
+    </View>
+);
 
 const GameScreen = (props) => {
     const initialGuess = generateRandomBetween(1, 100, props.userChoice);
@@ -38,6 +47,7 @@ const GameScreen = (props) => {
             onGameOver(pastGuesses.length);
         }
     }, [currentGuess, userChoice, onGameOver]);
+
 
     const nextGuessHandler = (direction) => {
         if (
@@ -76,13 +86,11 @@ const GameScreen = (props) => {
                     onPress={nextGuessHandler.bind(this, 'greater')} 
                 >GREATER</MainButton>
             </Card>
-            <ScrollView>
-                {pastGuesses.map(guess => (
-                    <View key={guess}>
-                        <Text>{guess}</Text>
-                    </View>
-                ))}
-            </ScrollView>
+            <View style={styles.list}>
+                <ScrollView>
+                    {pastGuesses.map((guess, index) => renderListItem(guess, pastGuesses.length - index))}
+                </ScrollView>
+            </View>
         </View>
     );
 };
@@ -99,6 +107,19 @@ const styles = StyleSheet.create({
         marginTop: 20,
         width: 900,
         maxWidth: '90%'
+    },
+    list: {
+        width: '80%',
+        flex: 1
+    },
+    listItem: {
+        borderColor: '#ccc',
+        borderWidth: 1,
+        padding: 15,
+        marginVertical: 10,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     }
 });
 

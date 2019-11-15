@@ -5,8 +5,8 @@ import {
     StyleSheet
 } from "react-native";
 
-import Colors from '../Template/Constants/colors';
-import Title from '../Atom/Title';
+import Colors from '../../Template/Constants/colors';
+import Title from '../../Atom/Title/Title';
 
 const Header = (props) => {
     return (

@@ -10,9 +10,9 @@ import {
 // finish video part managing past guesses
 
 
-import BodyText from '../../Atom/BodyText';
-import Title from '../../Atom/Title';
-import MainButton from '../../Atom/MainButton';
+import BodyText from '../../Atom/BodyText/BodyText';
+import Title from '../../Atom/Title/Title';
+import MainButton from '../../Atom/MainButton/MainButton';
 import Colors from '../../Template/Constants/colors';
 
 

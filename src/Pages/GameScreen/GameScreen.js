@@ -10,9 +10,9 @@ import {
 
 import NumberContainer from '../../Organisme/NumberContainer';
 import Card from '../../Organisme/Card';
-import Title from '../../Atom/Title';
-import BodyText from '../../Atom/BodyText';
-import MainButton from '../../Atom/MainButton';
+import Title from '../../Atom/Title/Title';
+import BodyText from '../../Atom/BodyText/BodyText';
+import MainButton from '../../Atom/MainButton/MainButton';
 
 const generateRandomBetween = (min, max, exlude) => {
     min = Math.ceil(min);

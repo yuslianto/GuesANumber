@@ -4,7 +4,7 @@ import {
   StyleSheet
 } from "react-native";
 
-import Header from "./src/Molekul/Header";
+import Header from "./src/Molekul/Header/Header";
 import StartGameScreen from "./src/Pages/StartGameScreen/StartGameScreen";
 import GameScreen from './src/Pages/GameScreen/GameScreen';
 import GameOverScreen from './src/Pages/GameOverScreen/GameOverScreen';

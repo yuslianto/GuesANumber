@@ -6,7 +6,8 @@ import {
     Alert,
     StyleSheet,
     ScrollView,
-    FlatList
+    FlatList,
+    Dimensions
 } from "react-native";
 
 import NumberContainer from '../../Organisme/NumberContainer';
@@ -75,6 +76,12 @@ const GameScreen = (props) => {
         setPastGuesses(currPassGuesses => [nextNumber.toString(), ...currPassGuesses]);
     };
 
+    let listContainerStyle = styles.listContainer;
+
+    if (Dimensions.get('window').width < 350) {
+        listContainerStyle = styles.listContainerBig
+    }
+
     return (
         <View style={styles.screen}>
             <Title>Opponent's Guess</Title>
@@ -82,12 +89,16 @@ const GameScreen = (props) => {
             <Card style={styles.buttonContainer}>
                 <MainButton 
                     onPress={nextGuessHandler.bind(this, 'lower')} 
-                >LOWER</MainButton>
+                >
+                    <BodyText style={styles.bodyText}>-</BodyText>
+                </MainButton>
                 <MainButton 
                     onPress={nextGuessHandler.bind(this, 'greater')} 
-                >GREATER</MainButton>
+                >
+                    <BodyText style={styles.bodyText}>+</BodyText>
+                </MainButton>
             </Card>
-            <View style={styles.listContainer}>
+            <View style={listContainerStyle}>
                 {/*<ScrollView contentContainerStyle={styles.list}>
                     {pastGuesses.map((guess, index) => renderListItem(guess, pastGuesses.length - index))}
                 </ScrollView>*/}
@@ -111,13 +122,22 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 20,
+        marginTop: Dimensions.get('window').height > 600 ? 20 : 5,
         width: 900,
         maxWidth: '90%'
     },
+    bodyText: {
+        fontSize: 20,
+        fontFamily: 'bold',
+        color: 'white'
+    },
     listContainer: {
         flex: 1,
-        width: '60%',
+        width: Dimensions.get('window').width > 350 ? '60%':'80%',
+    },
+    listContainerBig: {
+        flex: 1,
+        width: '80%',
     },
     list: {
         flexGrow: 1,

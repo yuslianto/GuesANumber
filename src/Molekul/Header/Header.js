@@ -2,7 +2,8 @@ import React from "react";
 import { 
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Platform
 } from "react-native";
 
 import Colors from '../../Template/Constants/colors';
@@ -21,12 +22,14 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 70,
         //paddingTop: 0,
-        backgroundColor: Colors.primary,
+        backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white',
+        borderBottomColor: Platform.OS === 'ios' ? '#ccc' : 'transparent',
+        borderBottomWidth: Platform.OS === 'ios' ? 1 : 0,
         alignItems: 'center',
         justifyContent: 'center',
     },
     headerTitle: {
-        color: 'black',
+        color: Platform.OS === 'ios' ? Colors.primary : 'white',
         //fontSize: 18,
     }
 });

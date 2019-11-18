@@ -9,7 +9,8 @@ import {
     StyleSheet,
     Dimensions,
     ScrollView,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    Platform
 } from "react-native";
 
 import Card from '../../Organisme/Card';

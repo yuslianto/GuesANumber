@@ -11,22 +11,35 @@ import Title from '../../Atom/Title/Title';
 
 const Header = (props) => {
     return (
-        <View style={styles.header}>
+        <View style={{
+            ...styles.headerBase, 
+            ...Platform.select({
+                ios: styles.headerIOS,
+                android: styles.headerAndroid
+            })
+        }}
+        >
             <Title style={styles.headerTitle}>{props.title}</Title>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    header: {
+    headerBase: {
         width: '100%',
         height: 70,
         //paddingTop: 0,
-        backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white',
-        borderBottomColor: Platform.OS === 'ios' ? '#ccc' : 'transparent',
-        borderBottomWidth: Platform.OS === 'ios' ? 1 : 0,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    headerIOS: {
+        backgroundColor: 'white',
+        borderBottomColor:'#ccc',
+        borderBottomWidth: 1,
+    },
+    headerAndroid: {
+        backgroundColor: Colors.primary,
+
     },
     headerTitle: {
         color: Platform.OS === 'ios' ? Colors.primary : 'white',

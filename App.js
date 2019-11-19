@@ -1,7 +1,8 @@
 import React, { Componennt, useState } from "react";
 import { 
   View,
-  StyleSheet
+  StyleSheet,
+  SafeAreaView
 } from "react-native";
 
 import Header from "./src/Molekul/Header/Header";
@@ -40,10 +41,10 @@ export default function App() {
     );
   }
     return (
-      <View style={styles.screen}>
+      <SafeAreaView style={styles.screen}>
         <Header title="Guess a Number"/>
         {content}
-      </View>
+      </SafeAreaView>
     );
 }
 

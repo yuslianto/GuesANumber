@@ -9,6 +9,7 @@ import {
     FlatList,
     Dimensions
 } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import NumberContainer from '../../Organisme/NumberContainer';
 import Card from '../../Organisme/Card';
@@ -108,13 +109,21 @@ const GameScreen = (props) => {
                     <MainButton 
                         onPress={nextGuessHandler.bind(this, 'lower')} 
                     >
-                        <BodyText style={styles.bodyText}>-</BodyText>
+                        <Icon
+                            name="ios-add"
+                            color="white"
+                            size={25}
+                        />
                     </MainButton>
                     <NumberContainer>{currentGuess}</NumberContainer>
                     <MainButton 
                         onPress={nextGuessHandler.bind(this, 'greater')} 
                     >
-                        <BodyText style={styles.bodyText}>+</BodyText>
+                        <Icon
+                            name="md-add"
+                            color="white"
+                            size={25}
+                        />
                     </MainButton>
                     </View>
                 <View style={listContainerStyle}>

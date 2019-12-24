@@ -2,13 +2,13 @@
 Guess a number app with react native
 
 i'm use dependencies
-**  
+  
     * "react": "16.9.0",
     * "react-native": "0.61.4",
     * "react-native-vector-icons": "^6.6.0"
     * OS windows 10
     * react native cli
-**
+
 
 this app i'm following Academind by **Maximilian Schwarzmüller** courses in udemy
 
@@ -21,7 +21,7 @@ and then
 
 and
 
-**react-native run-android **
+**react-native run-android**
 
 or 
 
